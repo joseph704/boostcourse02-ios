@@ -9,22 +9,47 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet var idTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var passwordTextField2: UITextField!
+    
+    @IBOutlet var doneButton: UIButton!
+    @IBOutlet var textField: UITextView!
+    @IBOutlet var imageView: UIImageView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        doneButton.isEnabled=false
     }
-    */
-
+    
+    @IBAction func touchTapgesture(_ sender: Any) {
+        self.view.endEditing(true)
+        
+        // Done 버튼 활성화 조건
+        if imageView.accessibilityActivate() == true && idTextField.text! != ""&&passwordTextField.text! != ""&&passwordTextField2.text! != ""&&textField.text! != "" {
+            if (passwordTextField.text!==passwordTextField2.text!) {
+                doneButton.isEnabled=true
+            }
+        } else { doneButton.isEnabled=false }
+        
+      
+        
+        
+    }
+    
+    // MARK: touchUpDoneButton
+    @IBAction func touchUpDoneButton(_ sender: Any) {
+        UserInformation.shared.id=idTextField.text!
+        if (passwordTextField.text!==passwordTextField2.text!) {
+        
+            UserInformation.shared.password=passwordTextField.text!
+        
+        }
+    }
 }
