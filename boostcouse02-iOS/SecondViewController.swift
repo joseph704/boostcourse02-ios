@@ -8,11 +8,19 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    lazy var imagePicker: UIImagePickerController = {
+        let picker:UIImagePickerController = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        return picker
+    }()
+    
+    
     @IBOutlet var idTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var passwordTextField2: UITextField!
-    
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var textField: UITextView!
     @IBOutlet var imageView: UIImageView!
@@ -21,14 +29,20 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         doneButton.isEnabled=false
+        let tapGestureView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapView(_:)))
+        
+        let tapGestureImageView: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapImageView(_:)))
+        
+        self.imageView.addGestureRecognizer(tapGestureImageView)
+        self.view.addGestureRecognizer(tapGestureView)
+        
+        
     }
     
-    @IBAction func touchTapgesture(_ sender: Any) {
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
         
         // Done 버튼 활성화 조건
@@ -37,19 +51,25 @@ class SecondViewController: UIViewController {
                 doneButton.isEnabled=true
             }
         } else { doneButton.isEnabled=false }
-        
-      
-        
-        
     }
     
-    // MARK: touchUpDoneButton
+    
+    @IBAction func tapImageView(_ sender: Any) {
+        self.present(self.imagePicker, animated: true, completion: nil)
+    }
+    
+
     @IBAction func touchUpDoneButton(_ sender: Any) {
         UserInformation.shared.id=idTextField.text!
-        if (passwordTextField.text!==passwordTextField2.text!) {
-        
-            UserInformation.shared.password=passwordTextField.text!
-        
-        }
+        UserInformation.shared.password=passwordTextField.text!
+        UserInformation.shared.text=textField.text!
+    }
+    
+    @IBAction func touchUpCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

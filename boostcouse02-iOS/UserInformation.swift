@@ -13,4 +13,7 @@ class UserInformation {
     
     var id:String?
     var password:String?
+    var text:String?
+    var phonenumber:String?
+    var birth:String?
 }

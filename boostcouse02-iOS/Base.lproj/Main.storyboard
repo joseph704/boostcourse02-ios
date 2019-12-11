@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,31 +15,31 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="boostcouse02_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK9-KG-zt9">
-                                <rect key="frame" x="99" y="539.5" width="47" height="30"/>
+                                <rect key="frame" x="99" y="425" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-ug-fBn">
-                                <rect key="frame" x="133" y="265" width="172" height="100"/>
+                                <rect key="frame" x="133" y="150.5" width="133" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="6qR-FA-k1t"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="h8u-Mb-TA0">
-                                <rect key="frame" x="50" y="407.5" width="314" height="81"/>
+                                <rect key="frame" x="50" y="293" width="275" height="81"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pDa-Kv-01I">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NC1-GN-cdU">
-                                        <rect key="frame" x="0.0" y="51" width="314" height="30"/>
+                                        <rect key="frame" x="0.0" y="51" width="275" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -47,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-hk-icV">
-                                <rect key="frame" x="261" y="539.5" width="54" height="30"/>
+                                <rect key="frame" x="222" y="425" width="54" height="30"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -85,40 +85,44 @@
             <objects>
                 <viewController id="Flq-6H-Xvy" customClass="SecondViewController" customModule="boostcouse02_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="1wL-Vj-DV3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QP-m5-UaM">
-                                <rect key="frame" x="101" y="802" width="48" height="30"/>
+                                <rect key="frame" x="50" y="607" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchUpCancelButton:" destination="Flq-6H-Xvy" eventType="touchUpInside" id="wpe-tT-yqZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-IR-PNJ">
-                                <rect key="frame" x="15" y="117" width="384" height="202"/>
+                                <rect key="frame" x="15" y="93" width="345" height="202"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-V4-MBD">
-                                        <rect key="frame" x="0.0" y="0.0" width="169" height="200"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-V4-MBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="200"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-VE-XVp">
-                                        <rect key="frame" x="184" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="145" y="0.0" width="200" height="200"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGK-S4-tDC">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGK-S4-tDC">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30.5"/>
                                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-yR-o2x">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-yR-o2x">
                                                 <rect key="frame" x="0.0" y="84.5" width="200" height="31"/>
                                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-Yx-9co">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-Yx-9co">
                                                 <rect key="frame" x="0.0" y="169.5" width="200" height="30.5"/>
                                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,29 +147,30 @@
                                 </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="efi-jz-gCY">
-                                <rect key="frame" x="15" y="343" width="384" height="429"/>
+                                <rect key="frame" x="15" y="319" width="345" height="258"/>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0O-97-Fze">
-                                <rect key="frame" x="276" y="802" width="37" height="30"/>
+                                <rect key="frame" x="276" y="607" width="49" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="touchUpDoneButton:" destination="Flq-6H-Xvy" eventType="touchUpInside" id="5Xn-RA-ctH"/>
+                                    <segue destination="WIY-jg-QPi" kind="show" id="Cvw-nN-sML"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="3QP-m5-UaM" firstAttribute="leading" secondItem="tKx-4F-1bv" secondAttribute="leading" constant="50" id="2hJ-5D-p1l"/>
+                            <constraint firstItem="tKx-4F-1bv" firstAttribute="trailing" secondItem="E0O-97-Fze" secondAttribute="trailing" constant="50" id="2pJ-gi-Wkt"/>
                             <constraint firstItem="3QP-m5-UaM" firstAttribute="top" secondItem="efi-jz-gCY" secondAttribute="bottom" constant="30" id="349-gv-kmZ"/>
-                            <constraint firstItem="3QP-m5-UaM" firstAttribute="leading" secondItem="tKx-4F-1bv" secondAttribute="leading" constant="101" id="70u-A8-SMN"/>
-                            <constraint firstItem="E0O-97-Fze" firstAttribute="leading" secondItem="3QP-m5-UaM" secondAttribute="trailing" constant="127" id="JQu-Hd-L7f"/>
+                            <constraint firstItem="E0O-97-Fze" firstAttribute="leading" secondItem="3QP-m5-UaM" secondAttribute="trailing" constant="178" id="Bnh-Tu-ozf"/>
                             <constraint firstItem="efi-jz-gCY" firstAttribute="top" secondItem="tSt-IR-PNJ" secondAttribute="bottom" constant="24" id="P3A-Us-UKQ"/>
                             <constraint firstItem="tSt-IR-PNJ" firstAttribute="top" secondItem="tKx-4F-1bv" secondAttribute="top" constant="73" id="RBX-FL-gvT"/>
-                            <constraint firstItem="tKx-4F-1bv" firstAttribute="trailing" secondItem="E0O-97-Fze" secondAttribute="trailing" constant="101" id="j43-mA-9aG"/>
                             <constraint firstItem="tKx-4F-1bv" firstAttribute="bottom" secondItem="3QP-m5-UaM" secondAttribute="bottom" constant="30" id="kCY-P3-39Q"/>
                             <constraint firstItem="tSt-IR-PNJ" firstAttribute="leading" secondItem="tKx-4F-1bv" secondAttribute="leading" constant="15" id="kwl-qt-dy7"/>
                             <constraint firstItem="tKx-4F-1bv" firstAttribute="trailing" secondItem="tSt-IR-PNJ" secondAttribute="trailing" constant="15" id="nwd-Se-mez"/>
@@ -175,9 +180,6 @@
                             <constraint firstItem="tKx-4F-1bv" firstAttribute="bottom" secondItem="E0O-97-Fze" secondAttribute="bottom" constant="30" id="wjH-Oh-jAh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tKx-4F-1bv"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="kf0-1S-VFE" appends="YES" id="uEB-Mj-0eu"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="E0O-97-Fze" id="j1M-FR-alQ"/>
@@ -189,20 +191,15 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0P-0q-hre" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kf0-1S-VFE">
-                    <connections>
-                        <action selector="touchTapgesture:" destination="Flq-6H-Xvy" id="GFf-4o-I9q"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1402.8985507246377" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="03P-yg-FQH">
             <objects>
-                <viewController id="WIY-jg-QPi" sceneMemberID="viewController">
+                <viewController id="WIY-jg-QPi" customClass="ThirdViewController" customModule="boostcouse02_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qPb-rW-vGe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2GZ-Ph-lJL"/>
