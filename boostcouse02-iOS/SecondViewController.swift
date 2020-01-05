@@ -14,6 +14,7 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         let picker:UIImagePickerController = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
+        picker.allowsEditing = true
         return picker
     }()
     
@@ -46,12 +47,13 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.view.endEditing(true)
         
         // Done 버튼 활성화 조건
-        if imageView.accessibilityActivate() == true && idTextField.text! != ""&&passwordTextField.text! != ""&&passwordTextField2.text! != ""&&textField.text! != "" {
-            if (passwordTextField.text!==passwordTextField2.text!) {
-                doneButton.isEnabled=true
-            }
-        } else { doneButton.isEnabled=false }
-    }
+        if imageView.isOpaque==false&&idTextField.text! != ""&&passwordTextField.text! != ""&&passwordTextField2.text! != ""&&textField.text! != ""&&passwordTextField.text!==passwordTextField2.text! {
+            doneButton.isEnabled=true
+        }
+        else { doneButton.isEnabled=false }
+        }
+        
+    
     
     
     @IBAction func tapImageView(_ sender: Any) {
@@ -78,9 +80,12 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let originalImage : UIImage = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage) {
+        if let originalImage : UIImage = (info[UIImagePickerController.InfoKey.editedImage] as! UIImage) {
+            
             self.imageView.image = originalImage
+            
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
