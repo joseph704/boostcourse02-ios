@@ -76,4 +76,11 @@ class SecondViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let originalImage : UIImage = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage) {
+            self.imageView.image = originalImage
+        }
+    }
+    
 }
