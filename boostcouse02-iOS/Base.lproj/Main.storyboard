@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WIY-jg-QPi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -221,7 +221,7 @@
                                     <action selector="changeDatePikcer:" destination="WIY-jg-QPi" eventType="valueChanged" id="3mY-iI-hmn"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqS-5k-Lim">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqS-5k-Lim">
                                 <rect key="frame" x="95" y="125" width="233" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -249,31 +249,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC2-qg-QLH">
-                                <rect key="frame" x="68" y="395" width="46" height="30"/>
+                                <rect key="frame" x="76" y="395" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="WIY-jg-QPi" eventType="touchUpInside" id="gFe-ls-rtc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="won-NN-IaZ">
-                                <rect key="frame" x="164" y="395" width="46" height="30"/>
+                                <rect key="frame" x="172" y="395" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="이전"/>
+                                <connections>
+                                    <action selector="beforeButtonClicked:" destination="WIY-jg-QPi" eventType="touchUpInside" id="hlU-A1-UAE"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-po-yUh">
-                                <rect key="frame" x="260" y="395" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-po-yUh">
+                                <rect key="frame" x="273" y="395" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="가입"/>
+                                <connections>
+                                    <action selector="signupButtonClicked:" destination="WIY-jg-QPi" eventType="touchUpInside" id="aS9-L6-QCG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="2GZ-Ph-lJL"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jet-1L-ZyU" appends="YES" id="7ar-Va-y3n"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="myView" destination="oqS-5k-Lim" id="12b-tH-enK"/>
+                        <outlet property="phoneNumber" destination="aiq-eH-dEU" id="Ksv-3R-FLJ"/>
                         <outlet property="pickerView" destination="tvN-7R-ckw" id="QeO-S9-9SE"/>
+                        <outlet property="signupButton" destination="GJf-po-yUh" id="QJG-YD-KWH"/>
                         <outlet property="textView" destination="aiq-eH-dEU" id="woI-ZC-6s4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRz-AC-srM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jet-1L-ZyU">
+                    <connections>
+                        <action selector="tapView:" destination="WIY-jg-QPi" id="ZtS-TS-cPA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2140" y="113.79310344827587"/>
         </scene>
